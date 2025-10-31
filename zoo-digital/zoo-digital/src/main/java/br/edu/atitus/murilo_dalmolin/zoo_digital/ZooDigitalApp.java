@@ -25,6 +25,10 @@ public class ZooDigitalApp {
             System.out.println("5 - Listar Voadores");
             System.out.println("6 - Listar Predadores");
             System.out.println("7 - Total de Animais");
+			System.out.println("11 - Peixe Morcego");
+            System.out.println("12 - Golfinho");
+            System.out.println("13 - Pato");
+            System.out.println("14 - Traíra");
             System.out.println("0 - Sair");
             System.out.print("Escolha uma opção: ");
 
@@ -40,6 +44,12 @@ public class ZooDigitalApp {
                 case 6 -> listarPredadores();
                 case 7 -> System.out.println("\nTotal de animais cadastrados: " + Animal.getContador());
                 case 0 -> System.out.println("\nEncerrando...");
+                case 11 -> new PeixeMorcego(nome, idade);
+                case 12 -> new Golfinho(nome, idade);
+                case 13 -> new Pato(nome, idade);
+                case 14 -> new Traira(nome, idade);
+
+
                 default -> System.out.println("\nOpção inválida!");
             }
 
@@ -149,3 +159,4 @@ public class ZooDigitalApp {
         }
     }
 }
+
