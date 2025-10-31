@@ -1,16 +1,21 @@
 package br.edu.atitus.murilo_dalmolin.zoo_digital;
+import org.apache.commons.lang3.StringUtils;
+
 
 public abstract class Animal {
 
-    protected String nome;
-    protected int idade;
-    private static int contador = 0; // contador de animais
+    private String nome;
+    private int idade;
+    private static int contador = 0;
 
     public Animal(String nome, int idade) {
-        this.nome = nome;
+        this.nome = StringUtils.capitalize(nome.toLowerCase()); // AQUI!!!
         this.idade = idade;
         contador++;
     }
+
+    public abstract void emitirSom();
+    public abstract void comer();
 
     public String getNome() {
         return nome;
@@ -24,13 +29,10 @@ public abstract class Animal {
         return contador;
     }
 
-    
-    public abstract void emitirSom();
-    public abstract void comer();
-
     @Override
     public String toString() {
-        return nome + " (" + idade + " anos)";
+        return getClass().getSimpleName() + " - Nome: " + nome + ", Idade: " + idade;
     }
 }
+
 
